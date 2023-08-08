@@ -1,0 +1,16 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: terraform-aws-s3
+  description: AWS S3 Terraform module
+  annotations:
+    github.com/project-slug: developertown/terraform-aws-s3
+  tags:
+    - terraform
+    - aws
+    - s3
+    - bucket
+spec:
+  type: terraform-module
+  lifecycle: production
+  owner: dt-devops
