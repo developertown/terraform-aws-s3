@@ -11,7 +11,7 @@ output "bucket_arn" {
 }
 
 output "bucket_name" {
-  value = var.bucket_name
+  value = local.name
 }
 
 output "bucket_region" {

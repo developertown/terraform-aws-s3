@@ -1,8 +1,3 @@
-variable "bucket_name" {
-  description = "The name of the project"
-  type        = string
-}
-
 variable "force_destroy" {
   description = "Destroy all objects in the bucket before destroying the bucket"
   type        = bool
@@ -24,13 +19,13 @@ variable "bucket_block_public_acls" {
 variable "bucket_block_public_policy" {
   description = "Whether Amazon S3 should block public bucket policies for this bucket. Defaults to false."
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "bucket_ignore_public_acls" {
   description = "Whether Amazon S3 should ignore public ACLs for this bucket. Defaults to false."
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "bucket_restrict_public_buckets" {

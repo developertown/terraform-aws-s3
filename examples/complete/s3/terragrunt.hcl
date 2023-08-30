@@ -12,7 +12,7 @@ inputs = {
   region      = "us-east-2"
   environment = "test"
 
-  bucket_name = "dt-terraform-test"
+  name = "dt-terraform-test"
 
   tags = {
     "Company" = "DeveloperTown"
