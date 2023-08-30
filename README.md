@@ -23,7 +23,7 @@ inputs = {
   region      = "us-east-2"
   environment = "test"
 
-  bucket_name = "dt-terraform-test"
+  name = "dt-terraform-test"
 
   tags = {
     "Company" = "DeveloperTown"
@@ -44,6 +44,7 @@ inputs = {
 |------|------|
 | [aws_s3_bucket.bucket](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket) | resource |
 | [aws_s3_bucket_acl.bucket](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_acl) | resource |
+| [aws_s3_bucket_ownership_controls.s3_bucket_acl_ownership](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_ownership_controls) | resource |
 | [aws_s3_bucket_public_access_block.bucket](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_public_access_block) | resource |
 | [aws_caller_identity.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/caller_identity) | data source |
 
@@ -51,11 +52,10 @@ inputs = {
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_bucket_name"></a> [bucket\_name](#input\_bucket\_name) | The name of the project | `string` | n/a | yes |
 | <a name="input_bucket_acl"></a> [bucket\_acl](#input\_bucket\_acl) | The canned ACL to apply. Defaults to 'private'. | `string` | `"private"` | no |
 | <a name="input_bucket_block_public_acls"></a> [bucket\_block\_public\_acls](#input\_bucket\_block\_public\_acls) | Whether Amazon S3 should block public ACLs for this bucket. Defaults to false. | `bool` | `true` | no |
-| <a name="input_bucket_block_public_policy"></a> [bucket\_block\_public\_policy](#input\_bucket\_block\_public\_policy) | Whether Amazon S3 should block public bucket policies for this bucket. Defaults to false. | `bool` | `true` | no |
-| <a name="input_bucket_ignore_public_acls"></a> [bucket\_ignore\_public\_acls](#input\_bucket\_ignore\_public\_acls) | Whether Amazon S3 should ignore public ACLs for this bucket. Defaults to false. | `bool` | `true` | no |
+| <a name="input_bucket_block_public_policy"></a> [bucket\_block\_public\_policy](#input\_bucket\_block\_public\_policy) | Whether Amazon S3 should block public bucket policies for this bucket. Defaults to false. | `bool` | `false` | no |
+| <a name="input_bucket_ignore_public_acls"></a> [bucket\_ignore\_public\_acls](#input\_bucket\_ignore\_public\_acls) | Whether Amazon S3 should ignore public ACLs for this bucket. Defaults to false. | `bool` | `false` | no |
 | <a name="input_bucket_restrict_public_buckets"></a> [bucket\_restrict\_public\_buckets](#input\_bucket\_restrict\_public\_buckets) | Whether Amazon S3 should restrict public bucket policies for this bucket. Defaults to true. | `bool` | `true` | no |
 | <a name="input_create_authenticated_iam_user"></a> [create\_authenticated\_iam\_user](#input\_create\_authenticated\_iam\_user) | Create an IAM user with access to this bucket | `bool` | `false` | no |
 | <a name="input_enabled"></a> [enabled](#input\_enabled) | Set to false to prevent the module from creating any resources | `bool` | `null` | no |
